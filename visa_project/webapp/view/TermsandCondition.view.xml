@@ -1,0 +1,36 @@
+<mvc:View controllerName="visaproject.controller.TermsandCondition"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true" height="100%"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page class="sapUiContentPadding">
+        <HBox alignItems="Center" justifyContent="Center">
+            <VBox alignItems="Center" width="40%" justifyContent="Center">
+                <Text text="VISA B2B Integrated Payment"></Text>
+                <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" class="sapUiMediumMargin tcclass">
+                    <f:content>
+                        <Text text="{i18n>termsandconditions}" />
+                        <TextArea id="idText1" rows="8" editable="false" class="borderClass sapUiContentPadding" value="{i18n>lorem}" />
+                        <VBox class="borderClass sapUiTinyMarginTop">
+                            <CheckBox text="{i18n>consenttotermsandcondition}" selected="{oModelControl>/consentToTC}"/>
+                        </VBox>
+                        <VBox class="borderClass sapUiTinyMarginTop">
+                            <CheckBox text="{i18n>consenttosharingdata}" selected="{oModelControl>/consentToSD}">
+                                <layoutData>
+                                    <l:GridData linebreak="true" indentL="4" indentM="4" />
+                                </layoutData>
+                            </CheckBox>
+                        </VBox>
+                        <HBox>
+                            <Button text="Continue" type="Emphasized" class="sapUiTinyMarginTop" enabled="{= ${oModelControl>/consentToSD} &amp;&amp; ${oModelControl>/consentToTC}}" press="onConfirmTC" />
+                        </HBox>
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </HBox>
+
+    </Page>
+</mvc:View>
+
+

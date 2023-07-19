@@ -1,0 +1,10 @@
+<mvc:View controllerName="visaproject.controller.DashboardPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true" height="100%"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page title="Simple Form Alignment" class="sapUiContentPadding">
+
+       </Page>
+</mvc:View>
