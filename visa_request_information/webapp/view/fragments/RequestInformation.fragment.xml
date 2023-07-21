@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+     <f:SimpleForm id="simpleForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+     <VBox >
+        <Title text="{i18n>requestForInformation}" />
+        <Text text="{i18n>requestconsent}" />
+                <Label text="{i18n>legalEntityName}" />
+                <Input value="{/field1}" />
+
+                <Label text="{i18n>areYouAnSapCustomer}" />
+                <Select selectedKey="{/field4}">
+                    <core:Item key="{i18n>no}" text="{i18n>no}" />
+                    <core:Item key="{i18n>yes}" text="{i18n>yes}" />
+                </Select>
+
+                <Label text="{i18n>doYouCurrentlyAcceptCardPaymentsFromACMECorporations}" />
+                <Select selectedKey="{/field4}">
+                    <core:Item key="{i18n>no}" text="{i18n>no}" />
+                    <core:Item key="{i18n>yes}" text="{i18n>yes}" />
+                </Select>
+
+                <Label text="{i18n>UBOName}" />
+                <Input value="{/field2}" />
+
+                <Label text="{i18n>contactPersonsName}" />
+                <Input value="{/field2}" />
+
+                <Label text="{i18n>contactPersonsEmail}" />
+                <Input value="{/field2}" />
+
+                <Label text="{i18n>bankAccountDetails}" />
+                <Input value="{/field2}" />
+
+                <Text text="{i18n>contactuscontent}" />
+                <Button type="Emphasized" text="{i18n>confirm}"></Button>
+                </VBox>
+            </f:SimpleForm>
+</core:FragmentDefinition> 
