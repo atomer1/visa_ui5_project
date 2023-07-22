@@ -1,1 +1,14 @@
 /* Enter your custom styles here */
+
+.addColor {
+    color:  #0588fa;
+}
+
+.reqtsize {
+    font-size: 30px;
+}
+
+.whiteButton {
+    background-color: #0588fa;
+    width: 80px;
+  }

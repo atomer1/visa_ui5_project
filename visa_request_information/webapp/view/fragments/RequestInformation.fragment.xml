@@ -2,39 +2,45 @@
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form">
-     <f:SimpleForm id="simpleForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-     <VBox >
-        <Title text="{i18n>requestForInformation}" />
-        <Text text="{i18n>requestconsent}" />
-                <Label text="{i18n>legalEntityName}" />
-                <Input value="{/field1}" />
+    <HBox width="100%">
+        <VBox class="sapUiContentPadding">
+            <f:SimpleForm id="simpleForm" editable="true" layout="ResponsiveGridLayout">
+                <VBox width="40%">
+                    <Title class="addColor reqtsize" text="{i18n>requestForInformation}" />
+                    <Text class="sapUiSmallMarginTop" text="{i18n>requestconsent}" />
+                    <Label class="sapUiSmallMarginTop" text="{i18n>legalEntityName}" />
+                    <Input value="{/field1}" editable="true" />
 
-                <Label text="{i18n>areYouAnSapCustomer}" />
-                <Select selectedKey="{/field4}">
-                    <core:Item key="{i18n>no}" text="{i18n>no}" />
-                    <core:Item key="{i18n>yes}" text="{i18n>yes}" />
-                </Select>
+                    <Label class="sapUiSmallMarginTop" text="{i18n>areYouAnSapCustomer}" />
+                    <Select selectedKey="{oModelControl>/sapCustomer}" width="100%">
+                        <core:Item key="0" text="{i18n>pleaseSelect}" />
+                        <core:Item key="{i18n>no}" text="{i18n>no}" />
+                        <core:Item key="{i18n>yes}" text="{i18n>yes}" />
+                    </Select>
 
-                <Label text="{i18n>doYouCurrentlyAcceptCardPaymentsFromACMECorporations}" />
-                <Select selectedKey="{/field4}">
-                    <core:Item key="{i18n>no}" text="{i18n>no}" />
-                    <core:Item key="{i18n>yes}" text="{i18n>yes}" />
-                </Select>
+                    <Label class="sapUiSmallMarginTop" text="{i18n>doYouCurrentlyAcceptCardPaymentsFromACMECorporations}" />
+                    <Select selectedKey="{oModelControl>/acmeCorporation}" width="100%">
+                        <core:Item key="0" text="{i18n>pleaseSelect}" />
+                        <core:Item key="{i18n>no}" text="{i18n>no}" />
+                        <core:Item key="{i18n>yes}" text="{i18n>yes}" />
+                    </Select>
+                    <VBox visible="{= ${oModelControl>/acmeCorporation} === 'No'}" >
+                    <Label class="sapUiSmallMarginTop" text="{i18n>UBOName}" />
+                    <Input value="{/field2}" />
 
-                <Label text="{i18n>UBOName}" />
-                <Input value="{/field2}" />
+                    <Label class="sapUiSmallMarginTop" text="{i18n>contactPersonsName}" />
+                    <Input value="{/field2}" />
 
-                <Label text="{i18n>contactPersonsName}" />
-                <Input value="{/field2}" />
+                    <Label class="sapUiTinyMarginTop" text="{i18n>contactPersonsEmail}" />
+                    <Input value="{/field2}" />
 
-                <Label text="{i18n>contactPersonsEmail}" />
-                <Input value="{/field2}" />
-
-                <Label text="{i18n>bankAccountDetails}" />
-                <Input value="{/field2}" />
-
-                <Text text="{i18n>contactuscontent}" />
-                <Button type="Emphasized" text="{i18n>confirm}"></Button>
+                    <Label class="sapUiSmallMarginTop" text="{i18n>bankAccountDetails}" />
+                    <Input value="{/field2}" />
+                    </VBox>
+                    <Text class="sapUiSmallMarginTop" text="{i18n>contactuscontent}" />
+                    <Button class="whiteButton" enabled="{= ${oModelControl>/acmeCorporation}!== '0' &amp;&amp; ${oModelControl>/sapCustomer}!== '0'}" type="Emphasized" text="{i18n>confirm}"></Button>
                 </VBox>
             </f:SimpleForm>
+        </VBox>
+    </HBox>
 </core:FragmentDefinition> 
