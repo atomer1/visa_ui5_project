@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="simpleFormPaymentTables" editable="true" layout="ResponsiveGridLayout">
+			<f:content>
+				<Toolbar >
+					<Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>paymentStatus}"></Title>
+				</Toolbar>
+				<Table id="idProductsTable" inset="false" items="{oModelData>/paymentStatus}">
+
+					<headerToolbar>
+						<Toolbar>
+
+							<!-- <Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/> -->
+							<!-- <ToolbarSpacer /> -->
+							<SearchField search=".onFilterPosts" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="{i18n>date}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>supplier}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>invoiceNo}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>amount}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>refNo}" />
+						</Column>
+						<Column>
+							<Text text="{i18n>status}" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{oModelData>date}" />
+								<Text text="{oModelData>supplier}" />
+								<Text text="{oModelData>invoiceNo}" />
+								<Text text="{oModelData>amount}" />
+								<Text text="{oModelData>refNo}" />
+								<ObjectStatus state="{path:'oModelData>status', formatter:'.formatter.fnChangeColor'}" text="{oModelData>status}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,14 +1,14 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "visaproject/controller/BaseController",
     "sap/ui/model/json/JSONModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel) {
+    function (BaseController, JSONModel) {
         "use strict";
 
-        return Controller.extend("visaproject.controller.TermsandCondition", {
+        return BaseController.extend("visaproject.controller.TermsandCondition", {
             onInit: function () {
                 var oDataControl = {
                     consentToTC: false,

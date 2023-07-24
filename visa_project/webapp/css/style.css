@@ -1,8 +1,75 @@
 /* Enter your custom styles here */
 .borderClass {
     border: 1px solid;
+    border-radius: 5px;
 }
 
 .tcclass {
     height: 450px;
+    width: fit-content;
+}
+
+.addColor {
+    color:  #3D58D4;
+}
+
+.identifySize {
+    font-size: 30px;
+}
+
+#addColorSimple{
+    background-color:  #3D58D4 !important;
+}
+
+.registerCardClass {
+    background-color: #3D58D4 !important;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.addWhiteClrContent {
+    padding-top: 5px;
+    color: white;
+
+}
+
+.size2 {
+    font-size: 30px;
+}
+
+.whiteButton {
+    background-color: white;
+    color:  #3D58D4;
+    width: 250px;
+  }
+
+.titleSize {
+    font-size: 18px;
+}
+
+#idEmailContent {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.toolbarHeader {
+    height: 5 rem;
+}
+
+.fullWidth {
+    width: 100% !important;
+    float: left;
+}
+
+.tcFontSize {
+    font-size: 12px;
+}
+
+.classTcCheckBox > .sapMCbBg  {
+    border: 2px solid blue !important;
+    
+}
+.classTcCheckBox {
+color: black;
 }

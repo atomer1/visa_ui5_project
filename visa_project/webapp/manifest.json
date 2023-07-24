@@ -58,6 +58,7 @@
           "bundleName": "visaproject.i18n.i18n"
         }
       }
+
     },
     "resources": {
       "css": [
@@ -90,6 +91,20 @@
           "target": [
             "HomeTargetView"
           ]
+        },
+        {
+          "name": "supplier", 
+          "pattern": "supplier",
+          "target": [
+            "SupplierTargetView"
+          ]
+        },
+        {
+          "name": "paymentStatus", 
+          "pattern": "paymentStatus",
+          "target": [
+            "PaymentTargetView"
+          ]
         }
       ],
       "targets": {
@@ -106,6 +121,20 @@
           "clearControlAggregation": false,
           "viewId": "DashboardPage",
           "viewName": "DashboardPage"
+        },
+        "SupplierTargetView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "paymentStatus",
+          "viewName": "Supplier"
+        },
+        "PaymentTargetView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "supplier",
+          "viewName": "Payment"
         }
       }
     },

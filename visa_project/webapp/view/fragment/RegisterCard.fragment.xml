@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+
+    <VBox class="sapUiSmallMargin registerCardClass" alignItems="Center" >
+                    <VBox  alignItems="Center" class="sapUiResponsivePadding">
+                    <Title class="addWhiteClrContent" text="{i18n>getStartedWith}"></Title>
+                    <Title class="addWhiteClrContent" text="{i18n>visaB2BIntegratedPayment}"></Title>
+                    
+                    <core:Icon src="sap-icon://credit-card" class="size2 addWhiteClrContent sapUiSmallMarginTopBottom" />
+                    
+                    <Label class="addWhiteClrContent" text="{i18n>step1To2RegisterVisaCard}" visible="{= ${oModelControl>/count} === 0}"></Label>
+                    <Label class="addWhiteClrContent" text="{i18n>step2To2RegisterVisaCard}" visible="{= ${oModelControl>/count} === 1}"></Label>
+                   
+                    <HBox >
+                        <Button text="{i18n>registerExistingCard}" class="whiteButton" visible="{= ${oModelControl>/count} === 0}" type="Transparent" press="fnNavigateRegisterPage"/>
+                        <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>applyForACorporateVisaCard}" type="Transparent" visible="{= ${oModelControl>/count} === 0}" />
+                        <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>beginOnBoarding}" type="Transparent" press="onOnBoardingSupplierPopup" visible="{= ${oModelControl>/count} === 1}"/>
+                    </HBox>
+                    <Label class="addWhiteClrContent" text="{i18n>registeringtext}" visible="{= ${oModelControl>/count} === 0}"></Label>
+                    <Text class="addWhiteClrContent" text="{i18n>onboardingText}" visible="{= ${oModelControl>/count} === 1}" />
+                </VBox>
+    </VBox>
+</core:FragmentDefinition> 

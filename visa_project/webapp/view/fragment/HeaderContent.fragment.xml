@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    >
+    
+            <Bar>
+                <!-- Logo on the left side -->
+                <contentLeft>
+                    <Image src="../images/VISA.png" width="35px" />
+                    <Text class="addColor " text="{i18n>b2BIntegratedPayment}" />
+                </contentLeft>
+
+                <!-- Buttons on the right side -->
+                <contentRight>
+                    <IconTabHeader mode="Inline">
+                        <items>
+                            <IconTabFilter key="info" text="{i18n>home}" />
+                            <IconTabFilter key="attachments" text="{i18n>suppliers}"  />
+                            <IconTabFilter key="PaymentStatusTable" text="{i18n>paymentStatus}"  />
+                            <!-- <IconTabFilter class="addColor" icon="sap-icon://search"/>
+                            <IconTabFilter class="addColor" icon="sap-icon://bell" /> -->
+                            
+                        </items>
+                    </IconTabHeader>
+                    <!-- <Button text="{i18n>home}" press="onHomePress" />
+                    <Button text="{i18n>suppliers}" press="onAboutPress" />
+                    <Button text="{i18n>paymentStatus}" press="onAboutPress" /> -->
+                    <Button icon="sap-icon://search" />
+                    <Button icon="sap-icon://bell"  />
+                    <MenuButton icon="sap-icon://person-placeholder">
+                        <menu>
+                            <Menu>
+                                <MenuItem text="Save" icon="sap-icon://save" press="onPress" />
+                                <MenuItem text="Open" icon="sap-icon://open-folder" press="onPress" />
+                            </Menu>
+                        </menu>
+                    </MenuButton>
+                    <!-- You can add more buttons or controls as needed -->
+                </contentRight>
+            </Bar>
+        
+</core:FragmentDefinition>

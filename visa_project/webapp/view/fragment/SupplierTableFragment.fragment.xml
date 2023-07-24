@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns:tnt="sap.tnt"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+
+    <VBox class="sapUiSmallMargin">
+        <f:SimpleForm id="simpleFormSupplierTables" editable="true" layout="ResponsiveGridLayout">
+            <Toolbar >
+                <Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>yourSuppliers}"></Title>
+            </Toolbar>
+            <f:content>
+
+                <Table id="idSupplierTable" inset="false" items="{oModelData>/suppliersData}">
+                    <headerToolbar class="toolbarHeader">
+                        <Toolbar>
+                            <SearchField search=".onFilterPosts" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="{i18n>companyName}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>UBOName}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>BankAccNum}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>email}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>sapCustomer}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>paymentMethod}" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{oModelData>companyName}" />
+                                <Text text="{oModelData>uboName}" />
+                                <Text text="{oModelData>bankAccountNum}" />
+                                <Text text="{oModelData>email}" />
+                                <Text text="{oModelData>sapCustomer}" />
+                                <ObjectStatus state="{path:'oModelData>status', formatter:'.formatter.fnChangeColorPaymentMethod'}" text="{oModelData>paymentMethod}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </f:content>
+        </f:SimpleForm>
+    </VBox>
+</core:FragmentDefinition>

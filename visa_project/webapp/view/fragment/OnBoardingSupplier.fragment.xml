@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form">
+  <Dialog id="myDialog" contentWidth="500px" beginButton="{_oDialogCloseButton}" afterClose="onDialogClosed" showHeader="false">
+    <VBox class="sapUiSmallMargin">
+      <Text class="addColor" text="{i18n>onBoardingSuppliersStep1of2}" />
+      <Title class="addColor identifySize" text="{i18n>Identify}" />
+      <FormattedText htmlText="{i18n>identifyContent}"  />
+    </VBox>
+    <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+      <f:content>
+        <VBox >
+                <SearchField  search="onSearch" />
+                <Table id="myTable" items="{oModelData>/companyName}" growingThreshold="5" growing="true" growingScrollToLoad="true">
+                  <columns>
+                    <Column>
+                      <Label text="{i18n>companyName}" />
+                    </Column>
+                    <Column hAlign="Right" vAlign="Middle" minScreenWidth="Tablet">
+                      <Label  />
+                    </Column>
+                  </columns>
+                  <items>
+                    <ColumnListItem>
+                      <cells>
+                        <Text text="{oModelData>name}" />
+                        <CheckBox selected="{oModelData>selected}" />
+                      </cells>
+                    </ColumnListItem>
+                  </items>
+
+                </Table>
+                
+              </VBox >
+          
+      </f:content>
+    </f:SimpleForm>
+    <buttons>
+      <Button text="{i18n>continue}" type="Emphasized" press="onEmailPopupOpen"></Button>
+   
+      <Button text="{i18n>skip}" press="onClosePopup"></Button>
+    </buttons>
+  </Dialog>
+</core:FragmentDefinition>

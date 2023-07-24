@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout">
+
+    <OverflowToolbar>
+        <Image src="../images/VISA.png" width="35px" />
+        <Label text="{i18n>copyrightContent}"/>
+        <ToolbarSpacer/>
+        <Link text="{i18n>contactUs}" />
+        <Link text="{i18n>privacy}" />
+        <Link text="{i18n>termsOfUse}" />
+    </OverflowToolbar>
+</core:FragmentDefinition>

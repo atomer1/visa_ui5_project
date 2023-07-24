@@ -1,0 +1,120 @@
+{
+    "paymentStatus": [
+        {
+            "date":"15/3/2023",
+            "supplier":"Company A",
+            "invoiceNo":9283742,
+            "amount":1500.00,
+            "refNo":9823479,
+            "status":"PENDING"
+        },
+        {
+            "date":"15/3/2023",
+            "supplier":"Company A",
+            "invoiceNo":9283742,
+            "amount":1500.00,
+            "refNo":9823479,
+            "status":"PENDING"
+        },
+        {
+            "date":"15/3/2023",
+            "supplier":"Company A",
+            "invoiceNo":9283742,
+            "amount":1500.00,
+            "refNo":9823479,
+            "status":"PENDING"
+        },
+        {
+            "date":"15/3/2023",
+            "supplier":"Company A",
+            "invoiceNo":9283742,
+            "amount":1500.00,
+            "refNo":9823479,
+            "status":"PENDING"
+        }
+    ],
+    "companyName": [
+        {
+            "name":"Company A",
+            "selected": false
+        },
+        {
+            "name":"Company B",
+            "selected": false
+        },
+        {
+            "name":"Company C",
+            "selected": false
+        },
+        {
+            "name":"Company D",
+            "selected": false
+        },
+        {
+            "name":"Company E",
+            "selected": false
+        },
+        {
+            "name":"Company F",
+            "selected": false
+        },
+        {
+            "name":"Company G",
+            "selected": false
+        },
+        {
+            "name":"Company H",
+            "selected": false
+        }
+    ],
+    "suppliersData":[
+        {
+            "companyName": "Company C",
+            "uboName": "Duckwood Corps Ltd",
+            "bankAccountNum": "FDNB 901 8772 9881",
+            "email": "contact@coyc.com",
+            "sapCustomer": "YES",
+            "paymentMethod": "Accepts Card Payments"
+        },
+        {
+            "companyName": "Company D",
+            "uboName": "N/A",
+            "bankAccountNum": "FDNB 901 8772 9631",
+            "email": "contact@coyc.com",
+            "sapCustomer": "YES",
+            "paymentMethod": "onboarded to VBIP"
+        },
+        {
+            "companyName": "Company A",
+            "uboName": "N/A",
+            "bankAccountNum": "FDNB 901 8772 8522",
+            "email": "contact@coyc.com",
+            "sapCustomer": "N/A",
+            "paymentMethod": "Not Onboarded"
+        },
+        {
+            "companyName": "Company B",
+            "uboName": "N/A",
+            "bankAccountNum": "FDNB 901 8772 7893",
+            "email": "contact@coyc.com",
+            "sapCustomer": "N/A",
+            "paymentMethod": "Pending Response"
+        },
+        {
+            "companyName": "Company 43",
+            "uboName": "Banana Farm VN",
+            "bankAccountNum": "FDNB 901 8772 4564",
+            "email": "contact@coyc.com",
+            "sapCustomer": "N/A",
+            "paymentMethod": "Not Onboarded"
+        },
+        {
+            "companyName": "Company F",
+            "uboName": "N/A",
+            "bankAccountNum": "FDNB 901 8772 1235",
+            "email": "contact@coyc.com",
+            "sapCustomer": "YES",
+            "paymentMethod": "Not Onboarded"
+        }
+    ]
+}
