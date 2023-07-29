@@ -10,15 +10,15 @@
 }
 
 .addColor {
-    color:  #3D58D4;
+    color: #3D58D4;
 }
 
 .identifySize {
     font-size: 30px;
 }
 
-#addColorSimple{
-    background-color:  #3D58D4 !important;
+#addColorSimple {
+    background-color: #3D58D4 !important;
 }
 
 .registerCardClass {
@@ -39,9 +39,9 @@
 
 .whiteButton {
     background-color: white;
-    color:  #3D58D4;
+    color: #3D58D4;
     width: 250px;
-  }
+}
 
 .titleSize {
     font-size: 18px;
@@ -66,10 +66,37 @@
     font-size: 12px;
 }
 
-.classTcCheckBox > .sapMCbBg  {
+.classTcCheckBox>.sapMCbBg {
     border: 2px solid blue !important;
-    
+
 }
+
 .classTcCheckBox {
-color: black;
+    color: black;
+}
+
+.classHBoxBorder {
+    background-color: #d4d3d2;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+
+}
+
+.classHboxWidth {
+    width: fit-content;
+}
+
+.classChildHboxWidth {
+    width: 25%;
+    border-right: 1px solid black;
+    margin-right: 10px;
+}
+
+.classObjectStatusPadding {
+    padding-left: 10px;
+}
+
+.classContentBold {
+    font-weight: bold !important;
 }

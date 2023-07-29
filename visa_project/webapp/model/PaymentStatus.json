@@ -74,7 +74,7 @@
             "bankAccountNum": "FDNB 901 8772 9881",
             "email": "contact@coyc.com",
             "sapCustomer": "YES",
-            "paymentMethod": "Accepts Card Payments"
+            "paymentMethod": "ACCEPTS CARD PAYMENTS"
         },
         {
             "companyName": "Company D",
@@ -82,7 +82,7 @@
             "bankAccountNum": "FDNB 901 8772 9631",
             "email": "contact@coyc.com",
             "sapCustomer": "YES",
-            "paymentMethod": "onboarded to VBIP"
+            "paymentMethod": "ONBOARDED TO VBIP"
         },
         {
             "companyName": "Company A",
@@ -90,7 +90,7 @@
             "bankAccountNum": "FDNB 901 8772 8522",
             "email": "contact@coyc.com",
             "sapCustomer": "N/A",
-            "paymentMethod": "Not Onboarded"
+            "paymentMethod": "NOT ONBOARDED"
         },
         {
             "companyName": "Company B",
@@ -98,7 +98,7 @@
             "bankAccountNum": "FDNB 901 8772 7893",
             "email": "contact@coyc.com",
             "sapCustomer": "N/A",
-            "paymentMethod": "Pending Response"
+            "paymentMethod": "PENDING RESPONSE"
         },
         {
             "companyName": "Company 43",
@@ -106,7 +106,7 @@
             "bankAccountNum": "FDNB 901 8772 4564",
             "email": "contact@coyc.com",
             "sapCustomer": "N/A",
-            "paymentMethod": "Not Onboarded"
+            "paymentMethod": "NOT ONBOARDED"
         },
         {
             "companyName": "Company F",
@@ -114,7 +114,26 @@
             "bankAccountNum": "FDNB 901 8772 1235",
             "email": "contact@coyc.com",
             "sapCustomer": "YES",
-            "paymentMethod": "Not Onboarded"
+            "paymentMethod": "NOT ONBOARDED"
         }
+    ],
+    "SuppliersPaymentMethod": [
+        {
+            "paymentMethodName": "ACCEPTS CARD PAYMENTS",
+            "paymentMethodCount": 19
+        },
+        {
+            "paymentMethodName": "ONBOARDED TO VBIP",
+            "paymentMethodCount": 19
+        },
+        {
+            "paymentMethodName": "NOT ONBOARDED",
+            "paymentMethodCount": 19
+        },
+        {
+            "paymentMethodName": "ONBOARDING ERROR",
+            "paymentMethodCount": 19
+        }
+
     ]
 }

@@ -5,54 +5,67 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
     <Page class="sapUiContentPadding" showHeader="false">
-        <VBox >
-        <f:SimpleForm id="simpleFormSupplierTables" editable="true" layout="ResponsiveGridLayout">
-            <Toolbar >
-                <Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>yourSuppliers}"></Title>
-            </Toolbar>
-            <f:content>
 
-                <Table id="idSupplierTable" inset="false" items="{oModelData>/suppliersData}">
-                    <headerToolbar class="toolbarHeader">
-                        <Toolbar>
-                            <SearchField search=".onFilterPosts" />
-                        </Toolbar>
-                    </headerToolbar>
-                    <columns>
-                        <Column>
-                            <Text text="{i18n>companyName}" />
-                        </Column>
-                        <Column>
-                            <Text text="{i18n>UBOName}" />
-                        </Column>
-                        <Column>
-                            <Text text="{i18n>BankAccNum}" />
-                        </Column>
-                        <Column>
-                            <Text text="{i18n>email}" />
-                        </Column>
-                        <Column>
-                            <Text text="{i18n>sapCustomer}" />
-                        </Column>
-                        <Column>
-                            <Text text="{i18n>paymentMethod}" />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem>
-                            <cells>
-                                <Text text="{oModelData>companyName}" />
-                                <Text text="{oModelData>uboName}" />
-                                <Text text="{oModelData>bankAccountNum}" />
-                                <Text text="{oModelData>email}" />
-                                <Text text="{oModelData>sapCustomer}" />
-                                <ObjectStatus state="{path:'oModelData>status', formatter:'.formatter.fnChangeColorPaymentMethod'}" text="{oModelData>paymentMethod}" />
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-            </f:content>
-        </f:SimpleForm>
-    </VBox>
+        <VBox id="idParentSuppliers">
+            <f:SimpleForm  editable="false" layout="ResponsiveGridLayout">
+                <Toolbar >
+                    <Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>yourSuppliers}"></Title>
+                </Toolbar>
+                <f:content>
+
+
+                    <!-- <core:Title ></core:Title> -->
+                    <VBox class="classHboxWidth">
+                        <HBox class="classHboxWidth classHBoxBorder" width="100%" items="{oModelData>/SuppliersPaymentMethod}">
+                            <items >
+                                <HBox class="classChildHboxWidth" justifyContent="Center">
+                                    <Text class="classContentBold" text="{oModelData>paymentMethodCount}" />
+                                    <ObjectStatus class="classObjectStatusPadding" state="{path:'oModelData>paymentMethodName', formatter:'.formatter.fnSupplierChangeColor'}" text="{oModelData>paymentMethodName}" />
+                                </HBox>
+                            </items>
+                        </HBox>
+                        <Table id="idSupplierTable" inset="false" items="{oModelData>/suppliersData}">
+                            <headerToolbar class="toolbarHeader">
+                                <Toolbar>
+                                    <SearchField search=".onFilterPosts" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="{i18n>companyName}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>UBOName}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>BankAccNum}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>email}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>sapCustomer}" />
+                                </Column>
+                                <Column>
+                                    <Text text="{i18n>paymentMethod}" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{oModelData>companyName}" />
+                                        <Text text="{oModelData>uboName}" />
+                                        <Text text="{oModelData>bankAccountNum}" />
+                                        <Text text="{oModelData>email}" />
+                                        <ObjectStatus state="{path:'oModelData>sapCustomer', formatter:'.formatter.fnSapCustomerChangeColor'}" text="{oModelData>sapCustomer}" />
+                                        <ObjectStatus state="{path:'oModelData>paymentMethod', formatter:'.formatter.fnSupplierChangeColor'}" text="{oModelData>paymentMethod}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
     </Page>
 </mvc:View>
