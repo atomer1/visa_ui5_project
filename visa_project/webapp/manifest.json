@@ -112,8 +112,8 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "TermsandCondition",
-          "viewName": "TermsandCondition"
+          "viewId": "BuyerOnboarding",
+          "viewName": "BuyerOnboarding"
         }, 
         "HomeTargetView": {
           "viewType": "XML",

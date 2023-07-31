@@ -1,0 +1,228 @@
+<mvc:View controllerName="visaproject.controller.BuyerOnboarding"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<NavContainer id="wizardNavContainer">
+		<pages>
+			<Page id="wizardContentPage" showHeader="false">
+				<content>
+					<Wizard id="CreateProductWizard" class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="wizardCompletedHandler">
+						<WizardStep id="ProductTypeStep" title="Entity Details" validated="true">
+							<form:SimpleForm editable="true" singleContainerFullSize="false">
+								<Label text="Company Code" required="true"/>
+								<Select selectedKey="{/companyCode}">
+									<core:Item key="1000" text="Entity1"/>
+									<core:Item key="2000" text="Entity2"/>
+									<core:Item key="3000" text="Entity3"/>
+									<core:Item key="4000" text="Entity4"/>
+									<core:Item key="5000" text="Entity5"/>
+									<core:Item key="6000" text="Entity6"/>
+								</Select>
+								<Label text="Company Code Description"/>
+								<Input valueStateText="Enter digits" valueState="{/companyCodeDesc}" id="companyCodeDesc" value="{/companyCodeDesc}" editable="false"/>
+								<Label text="Country"/>
+								<Input valueStateText="Country" valueState="{/country}" id="country" value="{/country}" editable="false"/>
+								<Label text="KYC Required"/>
+								<CheckBox selected="true" id="kycRequired"/>
+								<Label text="Business Nature" required="true"/>
+								<Select selectedKey="{/businessNature}">
+									<core:Item key="Individual" text="Individual"/>
+									<core:Item key="Company" text="Company"/>
+									<core:Item key="Partnership" text="Partnership Firm"/>
+								</Select>
+								<Label text="Share Holder Count"/>
+								<Input required="true" valueStateText="Share Holder Count" valueState="{/shareHolderCount}" id="shareHolder" value="{/shareHolderCount}" editable="true" type="Number"/>
+							</form:SimpleForm>
+						</WizardStep>
+						<WizardStep id="BuyerInfoStep" validated="true" title="Buyer Information" activate="activateBuyerInfoStep">
+							<form:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false" editable="true">
+								<core:Title/>
+								<Label text="First Name" required="true"/>
+								<Input valueStateText="FirstName" id="FirstName" value="{/FirstName}" editable="true"/>
+								<Label text="Last Name" required="true"/>
+								<Input valueStateText="LastName" id="LastName" value="{/LastName}" editable="true"/>
+								<Label text="Legal Name" required="true"/>
+								<Input valueStateText="LegalName" id="LegalName" value="{/LegalName}" editable="true"/>
+								<Label text="IP Address" required="true"/>
+								<Input valueStateText="IPAddress" id="IPAddress" value="{/IPAddress}" editable="true"/>
+								<Label text="Email Address" required="true"/>
+								<Input valueStateText="EmailAddress" id="EmailAddress" value="{/EmailAddress}" editable="true"/>
+								<Label text="Mobile Number Country Code" required="true"/>
+								<Input valueStateText="MobileNumberCC" id="MobileNumberCC" value="{/MobileNumberCC}" editable="true"/>
+								<Label text="Mobile Number" required="true"/>
+								<Input valueStateText="MobileNumber" id="MobileNumber" value="{/MobileNumber}" editable="true"/>
+								<core:Title/>
+								<Label text="Complete Address" required="true"/>
+								<Input valueStateText="CompleteAddress" id="CompleteAddress" value="{/CompleteAddress}" editable="true"/>
+								<Label text="ZIP Code" required="true"/>
+								<Input valueStateText="ZIPCode" id="ZIPCode" value="{/ZIPCode}" editable="true"/>
+								<Label text="Country Code" required="true"/>
+								<Input valueStateText="CountryCode" id="CountryCode" value="{/CountryCode}" editable="true"/>
+								<Label text="City" required="true"/>
+								<Input valueStateText="City" id="City" value="{/City}" editable="true"/>
+								<Label text="State" required="true"/>
+								<Input valueStateText="State" id="State" value="{/State}" editable="true"/>
+								<Label text="Web Address" required="true"/>
+								<Input valueStateText="WebAddress" id="WebAddress" value="{/WebAddress}" editable="true"/>
+								<Label text="Company Additional Email Address" />
+								<MultiInput id="CompanyAdditionalEmailAddress" showValueHelp="false"/>
+							</form:SimpleForm>
+						</WizardStep>
+						<WizardStep id="kycDetails" validated="true" activate="optionalStepActivation" title="KYC Details">
+							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can validate steps by default with the validated='true' property of the step. The next button is always enabled." showIcon="true"/>
+								<Text text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"/> -->
+							<form:SimpleForm editable="true">
+								<core:Title text="Address Proof" />
+								<Label text="Document Name"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Document Name"/>
+								<Input value="Australian Business Number"/>
+								<core:Title text="Business Proof" />
+
+								<core:Title text="Identity Proof" />
+
+								<core:Title text="Share Holder Proof" />
+								<Label text="Cover photo"/>
+								<u:FileUploader width="100%" tooltip="Upload product cover photo to the local server" style="Emphasized" placeholder="Choose a file for Upload..."/>
+								<Label text="Manufacturing date"/>
+								<DatePicker id="DP3" displayFormat="short" value="{/manufacturingDate}"/>
+								<Label text="Availability"/>
+								<SegmentedButton selectedKey="{/availabilityType}">
+									<items>
+										<SegmentedButtonItem key="In store" text="In store"/>
+										<SegmentedButtonItem key="In depot" text="In depot"/>
+										<SegmentedButtonItem key="In repository" text="In repository"/>
+										<SegmentedButtonItem key="Out of stock" text="Out of stock"/>
+									</items>
+								</SegmentedButton>
+								<Label text="Size"/>
+								<Input value="{/size}"/>
+								<ComboBox maxWidth="100px" selectedKey="{/measurement}">
+									<core:Item key="X" text="X"/>
+									<core:Item key="Y" text="Y"/>
+									<core:Item key="Z" text="Z"/>
+								</ComboBox>
+
+							</form:SimpleForm>
+						</WizardStep>
+						<WizardStep id="PricingStep" activate="pricingActivate" validated="true" title="Pricing">
+							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can use the wizard previousStep() and nextStep() methods to navigate from step to step without validation. Also you can use the GoToStep(step) method to scroll programmatically to previously visited steps." showIcon="true"/> -->
+							<form:SimpleForm editable="true">
+								<Label text="Price"/>
+								<Input value="{/productPrice}"/>
+								<Label text="Discount group"/>
+								<ComboBox selectedKey="{/discountGroup}">
+									<core:Item key="Kids" text="Kids"/>
+									<core:Item key="Teens" text="Teens"/>
+									<core:Item key="Adults" text="Adults"/>
+									<core:Item key="Elderly" text="Elderly"/>
+								</ComboBox>
+								<Label text=" VAT is included"/>
+								<CheckBox selected="{/productVAT}"/>
+							</form:SimpleForm>
+						</WizardStep>
+						<WizardStep id="TnCStep" class="TnCStep" activate="tnCActivate" complete="pricingComplete" validated="true" title="{i18n>termsandconditions}" >
+							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can use the wizard previousStep() and nextStep() methods to navigate from step to step without validation. Also you can use the GoToStep(step) method to scroll programmatically to previously visited steps." showIcon="true"/> -->
+							<HBox alignItems="Center" justifyContent="Center">
+								<VBox alignItems="Center" width="40%" justifyContent="Center">
+									<HBox >
+										<Image src="../images/VISA.png" width="35px" />
+										<Title class="addColor sapUiTinyMarginBegin" level="H2" text="{i18n>b2BIntegratedPayment}" />
+									</HBox>
+									<form:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" class="sapUiMediumMargin">
+										<form:content>
+											<Title level="H3" text="{i18n>termsandconditions}" />
+											<TextArea id="idText1" rows="3" editable="false" class="borderClass sapUiContentPadding" value="{i18n>lorem}" />
+											<VBox class="borderClass sapUiTinyMarginTop">
+												<CheckBox id="idTcCheckBox" class="classTcCheckBox" text="{i18n>consenttotermsandcondition}" selected="{oModelControl>/consentToTC}"/>
+												<Label class="sapUiMediumMarginBegin tcFontSize" text="{i18n>ConsentLabelTermsandCondition}" />
+											</VBox>
+											<VBox class="borderClass sapUiTinyMarginTop">
+												<CheckBox id="idTcCheckBox1" class="classTcCheckBox" text="{i18n>consenttosharingdata}" selected="{oModelControl>/consentToSD}" />
+												<Label class="sapUiMediumMarginBegin tcFontSize" text="{i18n>ConsentLabelShareingData}" />
+											</VBox>
+											<HBox>
+												<Button text="Continue" type="Emphasized" class="sapUiSmallMarginTop" enabled="{= ${oModelControl>/consentToSD} &amp;&amp; ${oModelControl>/consentToTC}}" press="onConfirmTC" />
+											</HBox>
+										</form:content>
+									</form:SimpleForm>
+								</VBox>
+							</HBox>
+						</WizardStep>
+					</Wizard>
+				</content>
+				<!-- <footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Cancel" press="handleWizardCancel"/>
+					</OverflowToolbar>
+				</footer> -->
+			</Page>
+			<Page id="wizardReviewPage" showHeader="false">
+				<content>
+					<form:SimpleForm title="1. Product Type" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+						<form:content>
+							<Label text="Type"/>
+							<Text id="ProductTypeChosen" text="{/productType}"/>
+							<Link press="editStepOne" text="Edit" />
+						</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm title="2. Product Information" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+						<form:content>
+							<Label text="Name"/>
+							<Text id="ProductNameChosen" text="{/productName}"/>
+							<Label text="Weight"/>
+							<Text id="ProductWeightChosen" text="{/productWeight}"/>
+							<Label text="Manufacturer"/>
+							<Text id="ProductManufacturerChosen" text="{/productManufacturer}"/>
+							<Label text="Description"/>
+							<Text id="ProductDescriptionChosen" text="{/productDescription}"/>
+							<Link press="editStepTwo" text="Edit" />
+						</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm title="3. Optional Information" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+						<form:content>
+							<Label text="Some text"/>
+							<Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. "/>
+							<Label text="Manufacturing Date"/>
+							<Text id="ManufacturingDate" text="{/manufacturingDate}"/>
+							<Label text="Availability"/>
+							<Text id="AvailabilityChosen" text="{/availabilityType}"/>
+							<Label text="Size"/>
+							<HBox>
+								<Text id="Size" text="{/size}"/>
+								<Text id="Size2" class="sapUiTinyMarginBegin" text="{/measurement}"/>
+							</HBox>
+							<Link press="editStepThree" text="Edit" />
+						</form:content>
+					</form:SimpleForm>
+
+					<form:SimpleForm title="4. Pricing" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+						<form:content>
+							<Label text="Price"/>
+							<Text id="ProductPriceChosen" text="{/productPrice}"/>
+							<Label text="Discount Group"/>
+							<Text id="DiscountGroupChosen" text="{/discountGroup}"/>
+							<Label text="VAT Included"/>
+							<Text id="ProductVATChosen" text="{/productVAT}"/>
+							<Link press="editStepFour" text="Edit" />
+						</form:content>
+					</form:SimpleForm>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="Submit" press="handleWizardSubmit"/>
+							<Button text="Cancel" press="handleWizardCancel"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</NavContainer>
+</mvc:View>
