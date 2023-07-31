@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:tnt="sap.tnt"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+
+    <VBox class="sapUiSmallMargin" visible="{= ${oModelControl>/sRteName} !== 'register'}">
+        <f:SimpleForm id="SimpleFormDisplay480_12120" editable="false" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="1">
+            <Toolbar >
+                <Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>yourSuppliers}"></Title>
+            </Toolbar>
+            <f:content >
+                <VBox class="sapUiSmallMarginBegin ">
+                    <HBox width="100%" class="sapUiTinyMarginBottom">
+                        <HBox width="50%">
+                            <Text text="19" />
+                            <ObjectStatus class="classObjectStatusPadding" text="ACCEPTS CARD PAYMENTS" />
+                        </HBox>
+                        <HBox width="50%">
+                            <Text text="19" />
+                            <ObjectStatus class="classObjectStatusPadding" text="ONBOARDED TO VBIP" />
+                        </HBox>
+                    </HBox>
+                    <HBox width="100%">
+                        <HBox width="50%">
+                            <Text text="19" />
+                            <ObjectStatus class="classObjectStatusPadding" text="NOT ONBOARDED" />
+                        </HBox>
+                        <HBox width="50%">
+                            <Text text="19" />
+                            <ObjectStatus class="classObjectStatusPadding" text="ONBOARDING ERROR" />
+                        </HBox>
+                    </HBox>
+                </VBox>
+            </f:content>
+        </f:SimpleForm>
+    </VBox>
+
+</core:FragmentDefinition>
+

@@ -5,56 +5,9 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
     <Page class="sapUiContentPadding" showHeader="false">
-        <!-- <VBox class="sapUiSmallMargin registerCardClass" alignItems="Center">
-            <VBox alignItems="Center" class="sapUiResponsivePadding">
-                <Title class="addWhiteClrContent" text="{i18n>getStartedWith}"></Title>
-                <Title class="addWhiteClrContent" text="{i18n>visaB2BIntegratedPayment}"></Title>
-
-                <core:Icon src="sap-icon://credit-card" class="size2 addWhiteClrContent sapUiSmallMarginTopBottom" />
-
-                <Label class="addWhiteClrContent" text="{i18n>step1To2RegisterVisaCard}" visible="{= ${oModelControl>/count} === 0}"></Label>
-                <Label class="addWhiteClrContent" text="{i18n>step2To2RegisterVisaCard}" visible="{= ${oModelControl>/count} === 1}"></Label>
-
-                <HBox >
-                    <Button text="{i18n>registerExistingCard}" class="whiteButton" visible="{= ${oModelControl>/count} === 0}" type="Transparent" press="fnNavigateRegisterPage"/>
-                    <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>applyForACorporateVisaCard}" type="Transparent" visible="{= ${oModelControl>/count} === 0}" />
-                    <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>beginOnBoarding}" type="Transparent" press="onOnBoardingSupplierPopup" visible="{= ${oModelControl>/count} === 1}"/>
-                </HBox>
-                <Label class="addWhiteClrContent" text="{i18n>registeringtext}" visible="{= ${oModelControl>/count} === 0}"></Label>
-                <Text class="addWhiteClrContent" text="{i18n>onboardingText}" visible="{= ${oModelControl>/count} === 1}" />
-            </VBox>
-        </VBox> -->
-        <VBox class="sapUiSmallMargin">
-            <f:SimpleForm id="SimpleFormDisplay480_12120" editable="false" layout="ResponsiveGridLayout" columnsL="2" columnsXL="2" columnsM="1">
-                <Toolbar >
-                    <Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>yourSuppliers}"></Title>
-                </Toolbar>
-                <f:content >
-                    <VBox class="sapUiSmallMarginBegin " >
-                    <HBox width="100%" class="sapUiTinyMarginBottom">
-                        <HBox width="50%">
-                            <Text text="19" />
-                            <ObjectStatus class="classObjectStatusPadding" text="ACCEPTS CARD PAYMENTS" />
-                        </HBox>
-                        <HBox width="50%">
-                            <Text text="19" />
-                            <ObjectStatus class="classObjectStatusPadding" text="ONBOARDED TO VBIP" />
-                        </HBox>
-                    </HBox>
-                    <HBox width="100%" >
-                        <HBox width="50%">
-                            <Text text="19" />
-                            <ObjectStatus class="classObjectStatusPadding" text="NOT ONBOARDED" />
-                        </HBox>
-                        <HBox width="50%">
-                            <Text text="19" />
-                            <ObjectStatus class="classObjectStatusPadding" text="ONBOARDING ERROR" />
-                        </HBox>
-                    </HBox>
-                    </VBox>
-                </f:content>
-            </f:SimpleForm>
-        </VBox>
+        
+        <core:Fragment class="sapUiTinyMarginTop"  fragmentName="visaproject.view.fragment.SupplierPaymentMethod" type="XML" />
+        <core:Fragment class="sapUiTinyMarginTop" visible="{= ${oModelControl>/sRteName} === 'register'}" fragmentName="visaproject.view.fragment.cardRegistering" type="XML" />
         <core:Fragment class="sapUiTinyMarginTop" fragmentName="visaproject.view.fragment.PaymentStatusTable" type="XML" />
     </Page>
 </mvc:View>

@@ -70,21 +70,50 @@
 								<MultiInput id="CompanyAdditionalEmailAddress" showValueHelp="false"/>
 							</form:SimpleForm>
 						</WizardStep>
-						<WizardStep id="kycDetails" validated="true" activate="optionalStepActivation" title="KYC Details">
+						<WizardStep id="kycDetails" class="TnCStep" validated="true" activate="optionalStepActivation" title="KYC Details">
 							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can validate steps by default with the validated='true' property of the step. The next button is always enabled." showIcon="true"/>
 								<Text text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"/> -->
 							<form:SimpleForm editable="true">
 								<core:Title text="Address Proof" />
 								<Label text="Document Name"/>
 								<Input value="Australian Business Number"/>
+								<Label text="Name as per document"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Document Number"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Name as per document"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Cover photo"/>
+								<u:FileUploader width="100%" tooltip="Upload product cover photo to the local server" style="Emphasized" placeholder="Choose a file for Upload..."/>
+								<core:Title text="Business Proof" />
 								<Label text="Document Name"/>
 								<Input value="Australian Business Number"/>
-								<core:Title text="Business Proof" />
+								<Label text="Name as per document"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Document Number"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Registration Data"/>
+								<DatePicker ></DatePicker>
+								<Label text="Cover photo"/>
+								<u:FileUploader width="100%" tooltip="Upload product cover photo to the local server" style="Emphasized" placeholder="Choose a file for Upload..."/>
 
 								<core:Title text="Identity Proof" />
-
-								<core:Title text="Share Holder Proof" />
+								<Label text="Document Name"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Name as per document"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Document Number"/>
+								<Input value="Australian Business Number"/>
+								<Label text="Date of birth"/>
+								<DatePicker ></DatePicker>
+								<Label text="Issue Date"/>
+								<DatePicker ></DatePicker>
 								<Label text="Cover photo"/>
+								<u:FileUploader width="100%" tooltip="Upload product cover photo to the local server" style="Emphasized" placeholder="Choose a file for Upload..."/>
+								<!-- <Input value="Australian Business Number"/> -->
+								
+								<core:Title text="Share Holder Proof" />
+								<!-- <Label text="Cover photo"/>
 								<u:FileUploader width="100%" tooltip="Upload product cover photo to the local server" style="Emphasized" placeholder="Choose a file for Upload..."/>
 								<Label text="Manufacturing date"/>
 								<DatePicker id="DP3" displayFormat="short" value="{/manufacturingDate}"/>
@@ -103,8 +132,11 @@
 									<core:Item key="X" text="X"/>
 									<core:Item key="Y" text="Y"/>
 									<core:Item key="Z" text="Z"/>
-								</ComboBox>
-
+								</ComboBox> -->
+								<Label text="Name"></Label>
+								<Input />
+								<Label text="Share Percentage"></Label>
+								<Input />
 							</form:SimpleForm>
 						</WizardStep>
 						<WizardStep id="PricingStep" activate="pricingActivate" validated="true" title="Pricing">
@@ -123,7 +155,7 @@
 								<CheckBox selected="{/productVAT}"/>
 							</form:SimpleForm>
 						</WizardStep>
-						<WizardStep id="TnCStep" class="TnCStep" activate="tnCActivate" complete="pricingComplete" validated="true" title="{i18n>termsandconditions}" >
+						<WizardStep id="TnCStep" activate="tnCActivate" complete="pricingComplete" validated="true" title="{i18n>termsandconditions}">
 							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can use the wizard previousStep() and nextStep() methods to navigate from step to step without validation. Also you can use the GoToStep(step) method to scroll programmatically to previously visited steps." showIcon="true"/> -->
 							<HBox alignItems="Center" justifyContent="Center">
 								<VBox alignItems="Center" width="40%" justifyContent="Center">

@@ -200,6 +200,10 @@ sap.ui.define([
 			this.model.setProperty("/productWeightState", "Error");
 			this.model.setProperty("/productNameState", "Error");
 			clearContent(this._wizard.getSteps());
+		},
+		onConfirmTC: function () {
+			var oRouter = this.getOwnerComponent().getRouter();
+				oRouter.navTo("register", {}, true);
 		}
 	});
 });

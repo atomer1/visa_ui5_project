@@ -17,9 +17,6 @@ sap.ui.define([
                 var oMdlCtrl = new JSONModel(oDataControl);
                 this.getView().setModel(oMdlCtrl, "oModelControl");
             },
-            onConfirmTC: function () {
-                var oRouter = this.getOwnerComponent().getRouter();
-                    oRouter.navTo("home", {}, true);
-            }
+            
         });
     });

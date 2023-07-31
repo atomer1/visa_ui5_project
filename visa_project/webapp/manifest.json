@@ -93,6 +93,13 @@
           ]
         },
         {
+          "name": "register",
+          "pattern": "register",
+          "target": [
+            "HomeTargetView"
+          ]
+        },
+        {
           "name": "supplier", 
           "pattern": "supplier",
           "target": [

@@ -22,13 +22,15 @@ sap.ui.define([
             onRouteMatched: function (oEvent) {
                 var sRouteName = oEvent.getParameter('name');
                 debugger;
-                this._bindView();
+                
+                this._bindView(sRouteName);
             },
-            _bindView: function () {
+            _bindView: function (sRouteName) {
                 var oPaymentStatus = Models.createJSONModelData("/model/PaymentStatus.json")
                 this.getView().setModel(oPaymentStatus, "oModelData");
                 var oData = {
-                    count: 0
+                    count: 0,
+                    sRteName: sRouteName
                 }
                 var oModel = new JSONModel(oData);
                 this.getView().setModel(oModel, "oModelControl");
