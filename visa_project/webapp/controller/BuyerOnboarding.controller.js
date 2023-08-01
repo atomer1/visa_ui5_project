@@ -204,6 +204,20 @@ sap.ui.define([
 		onConfirmTC: function () {
 			var oRouter = this.getOwnerComponent().getRouter();
 				oRouter.navTo("register", {}, true);
+		},
+		destroyReviewStep : function () {
+			// Assuming your wizard control has an ID of "myWizard"
+// Get the wizard control by its ID
+var oWizard = this.byId("CreateProductWizard");
+
+// Check if the review step exists before removing it
+if (oWizard.getSteps().length > 1) {
+  // Get the review step
+  var oReviewStep = oWizard.getSteps()[oWizard.getSteps().length - 1];
+
+  // Destroy the review step
+  oReviewStep.destroy();
+}
 		}
 	});
 });

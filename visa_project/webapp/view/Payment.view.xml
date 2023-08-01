@@ -5,8 +5,17 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
     <Page class="sapUiContentPadding" showHeader="false">
+        <customHeader>
+					<core:Fragment   fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
+
+				</customHeader>
+                <content>
         <VBox >
             <core:Fragment class="sapUiTinyMarginTop" fragmentName="visaproject.view.fragment.PaymentStatusTable" type="XML" />
         </VBox>
+        </content>
+        <footer>
+					<core:Fragment   fragmentName="visaproject.view.fragment.FooterContent" type="XML" />
+				</footer>
     </Page>
 </mvc:View>

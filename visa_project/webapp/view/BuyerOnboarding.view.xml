@@ -6,7 +6,11 @@
 	xmlns="sap.m">
 	<NavContainer id="wizardNavContainer">
 		<pages>
-			<Page id="wizardContentPage" showHeader="false">
+			<Page id="wizardContentPage">
+				<customHeader>
+					<core:Fragment   fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
+
+				</customHeader>
 				<content>
 					<Wizard id="CreateProductWizard" class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="wizardCompletedHandler">
 						<WizardStep id="ProductTypeStep" title="Entity Details" validated="true">
@@ -40,39 +44,40 @@
 							<form:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false" editable="true">
 								<core:Title/>
 								<Label text="First Name" required="true"/>
-								<Input valueStateText="FirstName" id="FirstName" value="{/FirstName}" editable="true"/>
+								<Input valueStateText="FirstName" id="FirstName" value="Test" editable="true"/>
 								<Label text="Last Name" required="true"/>
-								<Input valueStateText="LastName" id="LastName" value="{/LastName}" editable="true"/>
+								<Input valueStateText="LastName" id="LastName" value="User" editable="true"/>
 								<Label text="Legal Name" required="true"/>
-								<Input valueStateText="LegalName" id="LegalName" value="{/LegalName}" editable="true"/>
+								<Input valueStateText="LegalName" id="LegalName" value="Test" editable="true"/>
 								<Label text="IP Address" required="true"/>
-								<Input valueStateText="IPAddress" id="IPAddress" value="{/IPAddress}" editable="true"/>
+								<Input valueStateText="IPAddress" id="IPAddress" value="168.91.25" editable="true"/>
 								<Label text="Email Address" required="true"/>
-								<Input valueStateText="EmailAddress" id="EmailAddress" value="{/EmailAddress}" editable="true"/>
+								<Input valueStateText="EmailAddress" id="EmailAddress" value="test@test.com" editable="true"/>
 								<Label text="Mobile Number Country Code" required="true"/>
-								<Input valueStateText="MobileNumberCC" id="MobileNumberCC" value="{/MobileNumberCC}" editable="true"/>
+								<Input valueStateText="MobileNumberCC" id="MobileNumberCC" value="+91" editable="true"/>
 								<Label text="Mobile Number" required="true"/>
-								<Input valueStateText="MobileNumber" id="MobileNumber" value="{/MobileNumber}" editable="true"/>
+								<Input valueStateText="MobileNumber" id="MobileNumber" value="9885367541" editable="true"/>
 								<core:Title/>
 								<Label text="Complete Address" required="true"/>
-								<Input valueStateText="CompleteAddress" id="CompleteAddress" value="{/CompleteAddress}" editable="true"/>
+								<Input valueStateText="CompleteAddress" id="CompleteAddress" value="TN" editable="true"/>
 								<Label text="ZIP Code" required="true"/>
-								<Input valueStateText="ZIPCode" id="ZIPCode" value="{/ZIPCode}" editable="true"/>
+								<Input valueStateText="ZIPCode" id="ZIPCode" value="600032" editable="true"/>
 								<Label text="Country Code" required="true"/>
-								<Input valueStateText="CountryCode" id="CountryCode" value="{/CountryCode}" editable="true"/>
+								<Input valueStateText="CountryCode" id="CountryCode" value="+91" editable="true"/>
 								<Label text="City" required="true"/>
-								<Input valueStateText="City" id="City" value="{/City}" editable="true"/>
+								<Input valueStateText="City" id="City" value="Bangalore" editable="true"/>
 								<Label text="State" required="true"/>
-								<Input valueStateText="State" id="State" value="{/State}" editable="true"/>
+								<Input valueStateText="State" id="State" value="Karnataka" editable="true"/>
 								<Label text="Web Address" required="true"/>
-								<Input valueStateText="WebAddress" id="WebAddress" value="{/WebAddress}" editable="true"/>
+								<Input valueStateText="WebAddress" id="WebAddress" value="test.com" editable="true"/>
 								<Label text="Company Additional Email Address" />
-								<MultiInput id="CompanyAdditionalEmailAddress" showValueHelp="false"/>
+								<MultiInput id="CompanyAdditionalEmailAddress" value="test@test.com" showValueHelp="false"/>
 							</form:SimpleForm>
 						</WizardStep>
 						<WizardStep id="kycDetails" class="TnCStep" validated="true" activate="optionalStepActivation" title="KYC Details">
 							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can validate steps by default with the validated='true' property of the step. The next button is always enabled." showIcon="true"/>
 								<Text text="Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec ppellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	corper eu, posuere malesuada nisl. Integer pellentesque leo sit amet dui vehicula, quis ullamcorper est pulvinar. Nam in libero sem. Suspendisse arcu metus, molestie a turpis a, molestie aliquet dui. Donec pulvinar, sapien	"/> -->
+								
 							<form:SimpleForm editable="true">
 								<core:Title text="Address Proof" />
 								<Label text="Document Name"/>
@@ -139,8 +144,7 @@
 								<Input />
 							</form:SimpleForm>
 						</WizardStep>
-						<WizardStep id="PricingStep" activate="pricingActivate" validated="true" title="Pricing">
-							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can use the wizard previousStep() and nextStep() methods to navigate from step to step without validation. Also you can use the GoToStep(step) method to scroll programmatically to previously visited steps." showIcon="true"/> -->
+						<!-- <WizardStep id="PricingStep" activate="pricingActivate" validated="true" title="Pricing">
 							<form:SimpleForm editable="true">
 								<Label text="Price"/>
 								<Input value="{/productPrice}"/>
@@ -154,7 +158,7 @@
 								<Label text=" VAT is included"/>
 								<CheckBox selected="{/productVAT}"/>
 							</form:SimpleForm>
-						</WizardStep>
+						</WizardStep> -->
 						<WizardStep id="TnCStep" activate="tnCActivate" complete="pricingComplete" validated="true" title="{i18n>termsandconditions}">
 							<!-- <MessageStrip class="sapUiSmallMarginBottom" text="You can use the wizard previousStep() and nextStep() methods to navigate from step to step without validation. Also you can use the GoToStep(step) method to scroll programmatically to previously visited steps." showIcon="true"/> -->
 							<HBox alignItems="Center" justifyContent="Center">
@@ -185,12 +189,9 @@
 						</WizardStep>
 					</Wizard>
 				</content>
-				<!-- <footer>
-					<OverflowToolbar>
-						<ToolbarSpacer/>
-						<Button text="Cancel" press="handleWizardCancel"/>
-					</OverflowToolbar>
-				</footer> -->
+				<footer>
+					<core:Fragment   fragmentName="visaproject.view.fragment.FooterContent" type="XML" />
+				</footer>
 			</Page>
 			<Page id="wizardReviewPage" showHeader="false">
 				<content>

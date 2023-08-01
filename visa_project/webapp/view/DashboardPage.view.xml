@@ -5,9 +5,17 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
     <Page class="sapUiContentPadding" showHeader="false">
-        
+        <customHeader>
+					<core:Fragment   fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
+
+				</customHeader>
+                <content>
         <core:Fragment class="sapUiTinyMarginTop"  fragmentName="visaproject.view.fragment.SupplierPaymentMethod" type="XML" />
         <core:Fragment class="sapUiTinyMarginTop" visible="{= ${oModelControl>/sRteName} === 'register'}" fragmentName="visaproject.view.fragment.cardRegistering" type="XML" />
         <core:Fragment class="sapUiTinyMarginTop" fragmentName="visaproject.view.fragment.PaymentStatusTable" type="XML" />
+        </content>
+        <footer>
+					<core:Fragment   fragmentName="visaproject.view.fragment.FooterContent" type="XML" />
+				</footer>
     </Page>
 </mvc:View>
