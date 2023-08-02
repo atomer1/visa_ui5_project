@@ -27,10 +27,12 @@ sap.ui.define([
                 this._bindView();
             },
             _bindView: function () {
-                var oPaymentStatus = Models.createJSONModelData("/model/PaymentStatus.json")
-                this.getView().setModel(oPaymentStatus, "oModelData");
+                // var oPaymentStatus = Models.createJSONModelData("/model/PaymentStatus.json")
+                // this.getView().setModel(oPaymentStatus, "oModelData");
+                var oPaymentStatus = this.getView().getModel('paymentStatusModel').getProperty('/paymentStatus');
                 var oData = {
-                    count: 0
+                    count: 0,
+                    paymentStatus: oPaymentStatus
                 }
                 var oModel = new JSONModel(oData);
                 this.getView().setModel(oModel, "oModelControl");

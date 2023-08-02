@@ -11,7 +11,7 @@
             </Toolbar>
             <f:content>
 
-                <Table id="idSupplierTable" inset="false" items="{oModelData>/suppliersData}">
+                <Table id="idSupplierTable" inset="false" items="{paymentStatusModel>/suppliersData}">
                     <headerToolbar class="toolbarHeader">
                         <Toolbar>
                             <SearchField search=".onFilterPosts" />
@@ -40,12 +40,12 @@
                     <items>
                         <ColumnListItem>
                             <cells>
-                                <Text text="{oModelData>companyName}" />
-                                <Text text="{oModelData>uboName}" />
-                                <Text text="{oModelData>bankAccountNum}" />
-                                <Text text="{oModelData>email}" />
-                                <Text text="{oModelData>sapCustomer}" />
-                                <ObjectStatus state="{path:'oModelData>status', formatter:'.formatter.fnChangeColorPaymentMethod'}" text="{oModelData>paymentMethod}" />
+                                <Text text="{paymentStatusModel>companyName}" />
+                                <Text text="{paymentStatusModel>uboName}" />
+                                <Text text="{paymentStatusModel>bankAccountNum}" />
+                                <Text text="{paymentStatusModel>email}" />
+                                <Text text="{paymentStatusModel>sapCustomer}" />
+                                <ObjectStatus state="{path:'paymentStatusModel>status', formatter:'.formatter.fnChangeColorPaymentMethod'}" text="{paymentStatusModel>paymentMethod}" />
                             </cells>
                         </ColumnListItem>
                     </items>

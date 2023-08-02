@@ -14,6 +14,11 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.10.2",
       "toolsId": "e561ac7e-382a-4c9d-abbc-1b5808884ae3"
+    },"dataSources": {
+      "paymentStatusModel": {
+        "uri": "model/PaymentStatus.json",
+        "type": "JSON"
+      }
     }
   },
   "sap.ui": {
@@ -57,6 +62,10 @@
         "settings": {
           "bundleName": "visaproject.i18n.i18n"
         }
+      },
+      "paymentStatusModel" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "paymentStatusModel"
       }
 
     },

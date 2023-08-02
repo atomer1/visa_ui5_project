@@ -9,7 +9,7 @@
 				<Toolbar >
 					<Title class="addColor titleSize sapUiSmallMargin" level="H2" text="{i18n>paymentStatus}"></Title>
 				</Toolbar>
-				<Table id="idProductsTable" inset="false" items="{oModelData>/paymentStatus}">
+				<Table id="idProductsTable" inset="false" items="{oModelControl>/paymentStatus}">
 
 					<headerToolbar>
 						<Toolbar>
@@ -42,12 +42,12 @@
 					<items>
 						<ColumnListItem>
 							<cells>
-								<Text text="{oModelData>date}" />
-								<Text text="{oModelData>supplier}" />
-								<Text text="{oModelData>invoiceNo}" />
-								<Text text="{oModelData>amount}" />
-								<Text text="{oModelData>refNo}" />
-								<ObjectStatus state="{path:'oModelData>status', formatter:'.formatter.fnChangeColor'}" text="{oModelData>status}" />
+								<Text text="{oModelControl>date}" />
+								<Text text="{oModelControl>supplier}" />
+								<Text text="{oModelControl>invoiceNo}" />
+								<Text text="{oModelControl>amount}" />
+								<Text text="{oModelControl>refNo}" />
+								<ObjectStatus state="{path:'oModelControl>status', formatter:'.formatter.fnChangeColor'}" text="{oModelControl>status}" />
 							</cells>
 						</ColumnListItem>
 					</items>

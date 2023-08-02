@@ -11,7 +11,7 @@
       <f:content>
         <VBox >
                 <SearchField  search="onSearch" />
-                <Table id="myTable" items="{oModelData>/companyName}" growingThreshold="5" growing="true" growingScrollToLoad="true">
+                <Table id="myTable" items="{paymentStatusModel>/companyName}" growingThreshold="5" growing="true" growingScrollToLoad="true">
                   <columns>
                     <Column>
                       <Label text="{i18n>companyName}" />
@@ -23,8 +23,8 @@
                   <items>
                     <ColumnListItem>
                       <cells>
-                        <Text text="{oModelData>name}" />
-                        <CheckBox selected="{oModelData>selected}" />
+                        <Text text="{paymentStatusModel>name}" />
+                        <CheckBox selected="{paymentStatusModel>selected}" />
                       </cells>
                     </ColumnListItem>
                   </items>

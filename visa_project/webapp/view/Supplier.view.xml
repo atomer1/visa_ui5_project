@@ -20,15 +20,15 @@
 
                     <!-- <core:Title ></core:Title> -->
                     <VBox class="classHboxWidth">
-                        <HBox class="classHboxWidth classHBoxBorder" width="100%" items="{oModelData>/SuppliersPaymentMethod}">
+                        <HBox class="classHboxWidth classHBoxBorder" width="100%" items="{paymentStatusModel>/SuppliersPaymentMethod}">
                             <items >
                                 <HBox class="classChildHboxWidth" justifyContent="Center">
-                                    <Text class="classContentBold" text="{oModelData>paymentMethodCount}" />
-                                    <ObjectStatus class="classObjectStatusPadding" state="{path:'oModelData>paymentMethodName', formatter:'.formatter.fnSupplierChangeColor'}" text="{oModelData>paymentMethodName}" />
+                                    <Text class="classContentBold" text="{paymentStatusModel>paymentMethodCount}" />
+                                    <ObjectStatus class="classObjectStatusPadding" state="{path:'paymentStatusModel>paymentMethodName', formatter:'.formatter.fnSupplierChangeColor'}" text="{paymentStatusModel>paymentMethodName}" />
                                 </HBox>
                             </items>
                         </HBox>
-                        <Table id="idSupplierTable" inset="false" items="{oModelData>/suppliersData}">
+                        <Table id="idSupplierTable" inset="false" items="{paymentStatusModel>/suppliersData}">
                             <headerToolbar class="toolbarHeader">
                                 <Toolbar>
                                     <SearchField search=".onFilterPosts" />
@@ -57,12 +57,12 @@
                             <items>
                                 <ColumnListItem>
                                     <cells>
-                                        <Text text="{oModelData>companyName}" />
-                                        <Text text="{oModelData>uboName}" />
-                                        <Text text="{oModelData>bankAccountNum}" />
-                                        <Text text="{oModelData>email}" />
-                                        <ObjectStatus state="{path:'oModelData>sapCustomer', formatter:'.formatter.fnSapCustomerChangeColor'}" text="{oModelData>sapCustomer}" />
-                                        <ObjectStatus state="{path:'oModelData>paymentMethod', formatter:'.formatter.fnSupplierChangeColor'}" text="{oModelData>paymentMethod}" />
+                                        <Text text="{paymentStatusModel>companyName}" />
+                                        <Text text="{paymentStatusModel>uboName}" />
+                                        <Text text="{paymentStatusModel>bankAccountNum}" />
+                                        <Text text="{paymentStatusModel>email}" />
+                                        <ObjectStatus state="{path:'paymentStatusModel>sapCustomer', formatter:'.formatter.fnSapCustomerChangeColor'}" text="{paymentStatusModel>sapCustomer}" />
+                                        <ObjectStatus state="{path:'paymentStatusModel>paymentMethod', formatter:'.formatter.fnSupplierChangeColor'}" text="{paymentStatusModel>paymentMethod}" />
                                     </cells>
                                 </ColumnListItem>
                             </items>

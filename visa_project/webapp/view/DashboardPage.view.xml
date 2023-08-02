@@ -11,7 +11,7 @@
 				</customHeader>
                 <content>
         <core:Fragment class="sapUiTinyMarginTop"  fragmentName="visaproject.view.fragment.SupplierPaymentMethod" type="XML" />
-        <core:Fragment class="sapUiTinyMarginTop" visible="{= ${oModelControl>/sRteName} === 'register'}" fragmentName="visaproject.view.fragment.cardRegistering" type="XML" />
+        <core:Fragment class="sapUiTinyMarginTop"  fragmentName="visaproject.view.fragment.cardRegistering" type="XML" />
         <core:Fragment class="sapUiTinyMarginTop" fragmentName="visaproject.view.fragment.PaymentStatusTable" type="XML" />
         </content>
         <footer>
