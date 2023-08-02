@@ -3,12 +3,13 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "../model/formatter",
     "../model/models",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (BaseController, JSONModel, formatter, Models, Fragment) {
+    function (BaseController, JSONModel, formatter, Models, Fragment, MessageToast) {
         "use strict";
 
         return BaseController.extend("visaproject.controller.DashboardPage", {
@@ -28,15 +29,16 @@ sap.ui.define([
             _bindView: function (sRouteName) {
                 // var oPaymentStatus = Models.createJSONModelData("/model/PaymentStatus.json")
                 // this.getView().setModel(oPaymentStatus, "oModelData");
-
-                
                 var oData = {
                     count: 0,
                     sRteName: sRouteName,
-                    paymentStatus: {}
                 }
                 var oModel = new JSONModel(oData);
                 this.getView().setModel(oModel, "oModelControl");
+
+                if(this.getView().getModel('paymentStatusModel').getProperty('/loginStatus')) {
+                    this.onClickLogin();
+                }
             },
             fnNavigateRegisterPage: function () {
                 var iCount = this.getView().getModel('oModelControl').getData();
@@ -86,8 +88,14 @@ sap.ui.define([
                 this._oEmailDialog.destroy();
                 this._oEmailDialog = null;
             },
+            openApplyCorporateCardPopup: function () {
+                if (!this._oDialog) {
+                    this._oDialog = new sap.ui.xmlfragment("visaproject.view.fragment.ApplyCorporateVisaCard", this);
+                    this.getView().addDependent(this._oDialog);
+                }
+                this._oDialog.open();
+            },
             loadFragments: function (oEvent) {
-                debugger;
                 var sSelectedKey = oEvent.getParameter("key");
                 var sFragmentName = "visaproject.view.fragment." + sSelectedKey;
 
@@ -100,6 +108,10 @@ sap.ui.define([
                     oIconTabBar.removeAllItems();
                     oIconTabBar.addItem(oFragment);
                 }.bind(this));
+            },
+            onApplyCorporateVisaCard: function () {
+                MessageToast.show('Thank you for apply corporate visa card');
+                this.onClosePopup();
             }
 
         });

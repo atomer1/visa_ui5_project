@@ -16,7 +16,7 @@
 
             <HBox >
                 <Button text="{i18n>registerExistingCard}" class="whiteButton" visible="{= ${oModelControl>/count} === 0}" type="Transparent" press="fnNavigateRegisterPage"/>
-                <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>applyForACorporateVisaCard}" type="Transparent" visible="{= ${oModelControl>/count} === 0}" />
+                <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>applyForACorporateVisaCard}" press="openApplyCorporateCardPopup" type="Transparent" visible="{= ${oModelControl>/count} === 0}" />
                 <Button class="sapUiTinyMarginBegin whiteButton" text="{i18n>beginOnBoarding}" type="Transparent" press="onOnBoardingSupplierPopup" visible="{= ${oModelControl>/count} === 1}"/>
             </HBox>
             <Label class="addWhiteClrContent" text="{i18n>registeringtext}" visible="{= ${oModelControl>/count} === 0}"></Label>

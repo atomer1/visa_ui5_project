@@ -8,7 +8,7 @@
 		<pages>
 			<Page id="wizardContentPage">
 				<customHeader>
-					<core:Fragment   fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
+					<core:Fragment fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
 
 				</customHeader>
 				<content>

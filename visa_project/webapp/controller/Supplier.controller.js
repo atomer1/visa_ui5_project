@@ -29,13 +29,15 @@ sap.ui.define([
             _bindView: function () {
                 // var oPaymentStatus = Models.createJSONModelData("/model/PaymentStatus.json")
                 // this.getView().setModel(oPaymentStatus, "oModelData");
-                var oPaymentStatus = this.getView().getModel('paymentStatusModel').getProperty('/paymentStatus');
+                
                 var oData = {
                     count: 0,
-                    paymentStatus: oPaymentStatus
                 }
                 var oModel = new JSONModel(oData);
                 this.getView().setModel(oModel, "oModelControl");
+                if(this.getView().getModel('paymentStatusModel').getProperty('/loginStatus')) {
+                    this.onClickLogin();
+                }
             }
         });
     });

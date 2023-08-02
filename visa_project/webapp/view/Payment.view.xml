@@ -4,7 +4,7 @@
     xmlns:l="sap.ui.layout"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
-    <Page class="sapUiContentPadding" showHeader="false">
+    <Page class="sapUiContentPadding">
         <customHeader>
 					<core:Fragment   fragmentName="visaproject.view.fragment.HeaderContent" type="XML" />
 

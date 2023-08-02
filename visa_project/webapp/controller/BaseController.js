@@ -152,7 +152,7 @@ sap.ui.define([
             });
             return promise;
 
-        }, onInit: function () { 
+        }, onInit: function () {
             debugger;
         },
         navPressBack: function () {
@@ -162,10 +162,26 @@ sap.ui.define([
 
             if (sPreviousHash !== undefined) {
                 window.history.go(-1);
-            } 
+            }
         },
-        onClickNavigate: function(oEvent) {
-            debugger;
+        onClickNavigate: function (sNaviateName) {
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo(sNaviateName, {}, true);
+        },
+        onClickLogin: function () {
+            var oJsonData = this.getView().getModel('paymentStatusModel').getProperty('/paymentStatus');
+            this.getView().getModel('paymentStatusModel').setProperty('/loginStatus', true);
+            // if (oJsonData.loginStatus) {
+
+                var oData = {
+                    paymentStatus: oJsonData
+                }
+                var oModel = new JSONModel(oData);
+                this.getView().setModel(oModel, "oModelData");
+                this.getView().getModel("oModelData").refresh(true);
+                // this.getView().getModel("paymentStatusModel").refresh(true);
+                
+            // }
         }
     });
 });

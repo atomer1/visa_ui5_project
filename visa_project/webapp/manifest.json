@@ -65,7 +65,11 @@
       },
       "paymentStatusModel" : {
         "type": "sap.ui.model.json.JSONModel",
-        "dataSource": "paymentStatusModel"
+        "dataSource": "paymentStatusModel",
+        "settings": {
+          "defaultBindingMode": "TwoWay"
+        }
+
       }
 
     },

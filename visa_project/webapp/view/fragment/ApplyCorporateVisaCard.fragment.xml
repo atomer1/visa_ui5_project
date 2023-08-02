@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="myDialog" contentWidth="500px" beginButton="{_oDialogCloseButton}" afterClose="onDialogClosed" showHeader="false">
+        <VBox class="sapUiSmallMargin">
+            <!-- <Text class="addColor" text="{i18n>applyCorporateVisaCard}" /> -->
+            <Title class="addColor identifySize" text="{i18n>applyCorporateVisaCard}" />
+            <!-- <FormattedText htmlText="{i18n>identifyContent}" /> -->
+        </VBox>
+        <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+            <f:content>
+                <VBox >
+                    <Label text="Select Bank"/>
+                    <ComboBox >
+                        <core:Item key="0" text="HDFC" />
+                        <core:Item key="1" text="ICICI" />
+                        <core:Item key="2" text="SBI" />
+                        <core:Item key="3" text="Kotak" />
+                        <core:Item key="4" text="HSBC" />
+                        <core:Item key="5" text="Allhabad" />
+                        <core:Item key="6" text="Indian" />
+                    </ComboBox>
+                    <Label text="Name" />
+                    <Input value="Test"/>
+                    <!-- <Label text="Supplier No" />
+                    <Input value="894542"/> -->
+                    <Label text="Contact No" />
+                    <Input value="+91 9878465421"/>
+                    <Label text="Address" />
+                    <Input value="Bangalore"/>
+                </VBox >
+
+            </f:content>
+        </f:SimpleForm>
+        <Toolbar>
+            <ToolbarSpacer/>
+            <Button text="{i18n>apply}" type="Emphasized" press="onApplyCorporateVisaCard"></Button>
+
+            <Button text="{i18n>cancel}" press="onClosePopup"></Button>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>
